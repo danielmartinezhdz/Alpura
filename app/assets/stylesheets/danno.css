@@ -1,0 +1,7 @@
+.no-float{
+	float: none !important;
+}
+
+.large{
+	width: 100%;
+}

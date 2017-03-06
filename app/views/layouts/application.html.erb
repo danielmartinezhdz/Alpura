@@ -9,6 +9,21 @@
   </head>
 
   <body>
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <header>
+    	<nav>
+    		<ul class="nav nav-tabs">
+    			<li><%=link_to "LOGO", root_path%></li>
+    			<li><%=link_to "Home", root_path%></li>
+    			<%if user_signed_in?%>
+    				<li><%=link_to "Cerrar Session", destroy_user_session_path, method: :delete%></li>
+    			<%else%>
+    				<li><%=link_to "Inicial Session", new_user_session_path%></li>
+    			<%end%>
+    		</ul>
+    	</nav>
+    </header>
     <%= yield %>
   </body>
 </html>
